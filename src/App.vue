@@ -1,16 +1,16 @@
 <template>
   <div>
-    <app-display-post />
+    <app-get-product />
   </div>
 </template>
 
 
 <script>
-import AppDisplayPost from './components/AppDisplayPost';
+import AppGetProduct from './components/AppGetProduct';
 
 export default {
   components: {
-    'app-display-post': AppDisplayPost
+    'app-get-product': AppGetProduct
   }
 };
 </script>
@@ -23,6 +23,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2 {
@@ -42,4 +47,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>

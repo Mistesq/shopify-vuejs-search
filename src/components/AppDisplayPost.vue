@@ -1,33 +1,58 @@
 <template>
-  <div>
-    <div v-for="product in productData" :key="product.id">
-        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-        {{ product.price | money }}
-        <a href="{{ product.url | within: collection }}">
-          <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-        </a>
+  <div class="productCard">
+    <div class="image">
+      <a>
+        <img :src="product.images[0].src">
+      </a>
     </div>
+    <div class="cost">
+      {{ product.variants[0].price }}$
+    </div>
+    <a class="title">
+      {{ product.title }}
+    </a>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      productData: []
-    };
-  },
-  mounted() {
-    fetch("/products.json")
-     .then(response => response.json())
-     .then(({ products }) => {
-       this.productData = products;
-       console.log(products);
-       for (var prop in products) {
-         console.log("obj." + prop + " = " + products[prop].title);
-       }
-     });
-  }
+props: {
+  product: {
+  	required: true,
+  	default: null
+ 	}
+}
 };
-
 </script>
+
+<style lang="scss">
+  .productCard {
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 1px #ececec;
+
+    img {
+      width: 200px;
+      height: 150px;
+    }
+
+    .title {
+      margin-top: 10px;
+      font-size: 18px;
+
+    }
+
+    .cost {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+</style>

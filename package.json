@@ -12,6 +12,7 @@
     "watch": "npm run development -- --watch"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "vue": "^2.5.11"
   },
   "browserslist": [
@@ -24,6 +25,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
+    "babel-preset-vue-app": "^2.0.0",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "eslint": "^6.8.0",
