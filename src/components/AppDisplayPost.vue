@@ -9,19 +9,36 @@
       {{ product.variants[0].price }}$
     </div>
     <a class="title">
-      {{ product.title }}
+      <span v-html="product.title" />
     </a>
   </div>
 </template>
 
 <script>
 export default {
-props: {
-  product: {
-  	required: true,
-  	default: null
- 	}
-}
+  props: {
+    product: {
+    	required: true,
+    	default: null
+   	},
+    searchTerm: {
+      required: false,
+      default: null
+    }
+  },
+  methods: {
+    // add span tags with the hl-search CSS class to the search term.
+    highlightData( data ) {
+      if ( this.searchTerm ) {
+        const pattern = new RegExp( this.searchTerm, 'i' );
+        const highlightedData = data.replace(
+          pattern,
+          `<span class="hl-search">${this.searchTerm}</span>`
+        );
+        return highlightedData;
+      }
+    }
+  }
 };
 </script>
 

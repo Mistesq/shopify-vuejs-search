@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <app-get-product />
+  <div class="wrapper">
+    <app-quick-search />
   </div>
 </template>
 
 
 <script>
-import AppGetProduct from './components/AppGetProduct';
+import AppQuickSearch from './components/AppQuickSearch';
 
 export default {
   components: {
-    'app-get-product': AppGetProduct
+    'app-quick-search': AppQuickSearch
   }
 };
 </script>
@@ -46,6 +46,11 @@ li {
 
 a {
   color: #42b983;
+}
+
+.wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 </style>
