@@ -7,10 +7,13 @@
 npm install
 
 # 1
-npm run watch
+theme watch --notify=/tmp/theme.update
 
 # 2
-theme watch --notify=/tmp/theme.update
+npm run watch
+
+# 3
+theme open
 
 ## Build Setup
 
