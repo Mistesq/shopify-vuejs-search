@@ -1,6 +1,16 @@
 # hybrid
 
 > A Vue.js project
+## how to run
+``` bash
+# install dependencies
+npm install
+
+# 1
+npm run watch
+
+# 2
+theme watch --notify=/tmp/theme.update
 
 ## Build Setup
 
